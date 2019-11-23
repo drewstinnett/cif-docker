@@ -1,6 +1,10 @@
 # http://docs.ansible.com/ansible/playbooks_environment.html
 # environment:
 #   http_proxy: http://proxy.example.com:8080
+#   NOTE: This is a slightly altered version of the site.yml from the bearded
+#   avenger toolkit.  I've removed the elasticsearch bits because it does not
+#   run in a container.  Instead of running the ansible role on a vanilla
+#   image, you should use the containerized version provided by elastic
 ---
 - name: configure platform
   hosts: localhost

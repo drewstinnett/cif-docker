@@ -57,5 +57,6 @@ RUN rm -Rf /tmp/bearded-avenger* /tmp/ba.tar.gz /tmp/dk.tar.gz
 WORKDIR /home/cif
 
 COPY setup-cif-env.py /usr/local/bin/setup-cif-env.py
+COPY elasticsearch-token-setup.sh /usr/local/bin/elasticsearch-token-setup.sh
 
 ENTRYPOINT ["/entrypoint", "-n"]

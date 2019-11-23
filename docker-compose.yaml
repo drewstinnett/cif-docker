@@ -6,6 +6,8 @@ services:
     build: cif-docker/
     container_name: cif
     restart: on-failure
+    depends_on:
+      - elasticsearch
     ports:
       - 5000:5000
     environment:
@@ -27,6 +29,11 @@ services:
       - xpack.graph.enabled=false
       - xpack.watcher.enabled=false
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:9200"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
     ulimits:
       memlock:
         soft: -1
