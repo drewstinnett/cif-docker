@@ -1,0 +1,5 @@
+- src: csirtgadgets.cif
+  version: 0.0.14
+- src: https://github.com/drewstinnett/ansible-elasticsearch.git
+  version: cif-es5
+  name: elastic.elasticsearch
